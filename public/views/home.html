@@ -1,19 +1,25 @@
 <h1>Home</h1>
 <div class="row">
   <button class="btn btn-success" ng-click="home.getRandomGif()">Random Gif!</button>
+</div>
+<div class="row">
   <img ng-show="home.randomShow" ng-src="{{home.randomUrl}}" />
   <label ng-show="home.randomShow">Comment:</label>
-  <input type="text" ng-show="home.randomShow" ng-model="home.comment" />
+  <input type="text" ng-show="home.randomShow" ng-model="home.commentRandom" required/>
   <button ng-show="home.randomShow" ng-click="home.saveRandom()">Save!</button>
-
+</div>
+<div class="row">
   <input type="text" ng-model="home.search"/>
   <button class="btn btn-success" ng-click="home.searchGif(home.search)">Search</button>
-
-  <div ng-repeat="picture in home.searchedGifs">
+</div>
+<div class="row">
+  <div class="col-lg-4" ng-repeat="picture in home.searchedGifs">
     <img ng-src="{{picture.images.fixed_height.url}}" />
-    <label>Comment:</label>
-    <input type="text" ng-model="home.comment" />
-    <button class="btn btn-success" ng-click="home.saveSearched($index)">Save!</button>
+    <div class="row">
+      <label>Comment:</label>
+      <input type="text" ng-model="home.commentSearched[$index]" required/>
+      <button class="btn btn-success" ng-click="home.saveSearched($index)">Save!</button>
+    </div>
   </div>
 
 </div>
