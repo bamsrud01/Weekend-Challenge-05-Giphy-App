@@ -1,1 +1,1 @@
-angular.module('giphyApp', []);
+angular.module('giphyApp', ['ngRoute']);

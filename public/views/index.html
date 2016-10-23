@@ -16,8 +16,17 @@
     <link rel="stylesheet" href="vendors/bootstrap.min.css"/>
     <link rel="stylesheet" href="styles/styles.css"/>
 
+    <base href="/" />
   </head>
   <body>
+    <div class="container">
+      <div class = "row">
+        <a class="btn btn-primary" href="/home" role="button">Home</a>
+        <a class="btn btn-primary" href="/favorites" role="button">Favorites</a>
+      </div>
 
+      <ng-view></ng-view>
+
+    </div>
   </body>
 </html>
