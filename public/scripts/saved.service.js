@@ -8,7 +8,6 @@ function savedService($http) {
   service.getSaved = function() {
     return $http.get('/favorites')
     .then(function(response) {
-      console.log(response.data);
       return response.data;
     });
   };

@@ -3,13 +3,11 @@ angular.module('giphyApp')
 
 function HomeController(homeService) {
   var self = this;
-  self.randomShow = false;
 
   self.getRandomGif = function() {
     homeService.getRandomGif().then(function(gif) {
       //  Assign the result to the displayed gif image source
       self.randomUrl = gif.fixed_height_downsampled_url;
-      self.randomShow = true;
     });
   }
 
@@ -26,11 +24,8 @@ function HomeController(homeService) {
   var packagedGiphy = {};
 
   self.saveRandom = function() {
-    //  Send self.randomUrl to database
     packagedGiphy.url = self.randomUrl;
     packagedGiphy.comment = self.commentRandom;
-    console.log('Packaged:', packagedGiphy);
-    // homeService.saveGiphy(self.randomUrl).then
     homeService.postGif(packagedGiphy);
     self.commentRandom = '';
   }
@@ -38,9 +33,9 @@ function HomeController(homeService) {
   self.saveSearched = function(index) {
     packagedGiphy.url = self.searchedGifs[index].images.fixed_height.url;
     packagedGiphy.comment = self.commentSearched[index];
-    console.log('Packed at index' + index + ':', packagedGiphy);
-    //  Send self.searchedGifs[index].images.fixed_height.url to database
     homeService.postGif(packagedGiphy);
     self.commentSearched[index] = '';
   }
+
+  self.getRandomGif();
 }

@@ -22,7 +22,6 @@ function SavedController(savedService) {
 
   self.deleteGif = function(index) {
     var deleteId = self.gifs[index].id;
-    console.log(deleteGif);
     savedService.deleteGif(deleteId).then(self.showSaved());
   }
 

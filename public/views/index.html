@@ -5,7 +5,6 @@
     <title>Giphy App</title>
     <script src="vendors/angular.min.js"></script>
     <script src="vendors/angular-route.min.js"></script>
-    <script src="vendors/jquery.min.js"></script>
 
     <script src="scripts/giphy.module.js"></script>
     <script src="scripts/giphy.config.js"></script>
@@ -21,10 +20,11 @@
   </head>
   <body>
     <div class="container">
-      <div class = "row">
-        <a class="btn btn-primary" href="/home" role="button">Home</a>
-        <a class="btn btn-primary" href="/favorites" role="button">Favorites</a>
-      </div>
+      <header class="row col-lg-12">
+        <h1 class="col-lg-offset-2 col-lg-4">Giphy Keeper</h1>
+        <a class="btn btn-info btn-lg" href="/home" role="button">Home</a>
+        <a class="btn btn-info btn-lg" href="/favorites" role="button">Favorites</a>
+      </header>
 
       <ng-view></ng-view>
 

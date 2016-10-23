@@ -14,7 +14,6 @@ function HomeService($http) {
         rating: 'y'
       }
     }).then(function(response) {
-      console.log(response.data.data);
       return response.data.data;
     });
   };
@@ -32,8 +31,6 @@ function HomeService($http) {
   };
 
   service.postGif = function(giphyData) {
-    console.log('POST arrived');
-    console.log(giphyData);
     $http({
       method: 'POST',
       url: '/favorites',

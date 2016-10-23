@@ -1,0 +1,22 @@
+body {
+  background-color: skyblue;
+}
+
+header {
+  background-color: black;
+  border-radius: 0 0 15px 15px;
+}
+
+.btn-lg {
+  margin-top: 20px;
+}
+
+h1 {
+  color: white;
+  font-size: 48px;
+}
+
+h2 {
+  padding: 25px;
+  margin-top: 50px;
+}
