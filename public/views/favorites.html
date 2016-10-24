@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-lg-6" ng-repeat="picture in saved.gifs">
     <img ng-src="{{picture.url}}" />
-    <div class="row">
+    <div class="row saver">
       <label>Comment:</label>
       <input type="text" ng-model="picture.comment" />
       <button class="btn btn-warning" ng-click="saved.updateGif($index)">Update!</button>

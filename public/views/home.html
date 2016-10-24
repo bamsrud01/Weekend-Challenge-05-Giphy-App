@@ -1,13 +1,13 @@
 <h2>Home</h2>
 <div class="col-lg-4">
   <div class="row">
-    <button class="btn btn-success" ng-click="home.getRandomGif()">Get a Random Gif!</button>
+    <button class="btn btn-success getter" ng-click="home.getRandomGif()">Get a Random Gif!</button>
   </div>
   <div class="row">
     <div class="row">
       <img ng-src="{{home.randomUrl}}" />
     </div>
-    <div class="row">
+    <div class="row saver">
       <label>Comment:</label>
       <input type="text" ng-model="home.commentRandom" required/>
       <button class="btn btn-success" ng-click="home.saveRandom()">Save!</button>
@@ -15,14 +15,14 @@
   </div>
 </div>
 <div class="col-lg-8">
-  <div class="row">
+  <div class="row getter">
     <input type="text" ng-model="home.search"/>
     <button class="btn btn-success" ng-click="home.searchGif(home.search)">Search All Gifs!</button>
   </div>
   <div class="row">
     <div class="col-lg-6" ng-repeat="picture in home.searchedGifs">
       <img ng-src="{{picture.images.fixed_height.url}}" />
-      <div class="row">
+      <div class="row saver">
         <label>Comment:</label>
         <input type="text" ng-model="home.commentSearched[$index]" required/>
         <button class="btn btn-success" ng-click="home.saveSearched($index)">Save!</button>
